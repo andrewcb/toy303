@@ -1,0 +1,52 @@
+toy303 is a simple Curses-based program that (partly) simulates 
+(something vaguely like) a Roland TB-303.  At present, accents aren't 
+implemented, there are only three knobs (cutoff, resonance and decay), 
+the interface is fairly crude, and there is no provision for saving or 
+loading patterns (not to mention writing audio, interfacing with other 
+software, or indeed working with any output device other than Linux-style
+/dev/dsp, &c), which is why it's called toy303.
+
+The keys are:
+
+ left, right:	move the cursor left or right across the sequencer
+ space:		toggle note/rest at cursor position
+ 't':		set note at cursor to tie (continuation of previous note)
+ '~':		toggle slide at cursor position
+ 'o'/'O':	change octave of note at position
+
+ '[', ']':	tempo up/down
+
+ '1'/'!':	decrease/increase filter cutoff
+ '2'/'@':	decrease/increase resonance
+ '3'/'#':	decrease/increase filter decay time
+
+ 'w':		toggle square/sawtooth waveform
+
+ delete: 	clear sequence
+ 'r':		randomise notes in sequencer
+ 'q': 		exit the sequencer
+
+
+The actual note values are set with the bottom row of the QWERTY keyboard,
+which is mapped like a piano keyboard, looking like so, with 'z' being C:
+
+ s d   g h j
+z x c v b n m
+
+
+toy303 is a test of a C++-based audio generation object system, and of a 
+303-style bassline sequencer object.  This framework, which is being 
+developed for building virtual instruments and the like, is rather rough 
+and will change over time, and will most probably be integrated into more 
+complete and mature software than this little toy program.  
+
+The 303 engine contains portions of Lars Hamre's 303 emulator and borrows
+snippets of code from the 3MU batch-mode 303 emulator.
+
+toy303 is distributed under the GPL.
+
+Have fun,
+
+ -- acb
+
+27/11/2001
